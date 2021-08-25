@@ -3,3 +3,4 @@ backendenv/
 Backend/ProjectAPI/__pycache__
 Backend/TeamSubmission/__pycache__
 Backend/myenv
+myenv/
