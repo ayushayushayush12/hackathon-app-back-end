@@ -20,5 +20,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include('TeamSubmission.urls'))
+    url(r'^', include('TeamSubmission.urls')),
+    url(r'^', include('TeamProfile.urls'))
+    
 ]
