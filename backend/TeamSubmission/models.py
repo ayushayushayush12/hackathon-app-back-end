@@ -8,7 +8,7 @@ class TeamSubmission(models.Model):
     GithubLink = models.CharField(max_length=500)
     ProjectIdea = models.CharField(max_length=1500)
     CodingLanguages = models.CharField(max_length=1500)
-class Book(models.Model):
+class Login2(models.Model):
     title = models.TextField(max_length=32, blank=False, null=False)
 
 

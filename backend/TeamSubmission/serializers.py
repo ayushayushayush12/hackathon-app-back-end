@@ -2,7 +2,7 @@ from rest_framework import serializers
 from TeamSubmission.models import TeamSubmission
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
-from .models import Book
+from .models import Login2
 class TeamSubmissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = TeamSubmission
@@ -22,9 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
         Token.objects.create(user=user)
         return user
 
-class BookSerializer(serializers.ModelSerializer):
+class Login2Serializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
+        model = Login2
         fields = ['id', 'title']
        
 

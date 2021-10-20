@@ -11,8 +11,8 @@ from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
-from .serializers import UserSerializer, BookSerializer
-from .models import Book
+from .serializers import UserSerializer, Login2Serializer
+from .models import Login2
 
 # Create your views here.
 @csrf_exempt
@@ -47,9 +47,9 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class BookViewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
+class Login2ViewSet(viewsets.ModelViewSet):
+    queryset = Login2.objects.all()
+    serializer_class = Login2Serializer
     authentication_classes = [TokenAuthentication, ]
     permission_classes = [IsAuthenticated, ]
 
