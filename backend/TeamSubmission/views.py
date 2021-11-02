@@ -7,6 +7,12 @@ from TeamSubmission.models import TeamSubmission
 from TeamSubmission.serializers import TeamSubmissionSerializer
 
 from django.core.files.storage import default_storage
+from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.models import User
+from .serializers import UserSerializer, Login2Serializer
+from .models import Login2
 
 # Create your views here.
 @csrf_exempt
@@ -37,4 +43,13 @@ def teamSubmissionApi(request,id=0):
         teamSubmission=TeamSubmission.objects.get(TeamSubmissionId=id)
         teamSubmission.delete()
         return JsonResponse("Deleted Succeffully!!", safe=False)
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class Login2ViewSet(viewsets.ModelViewSet):
+    queryset = Login2.objects.all()
+    serializer_class = Login2Serializer
+    authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticated, ]
 
