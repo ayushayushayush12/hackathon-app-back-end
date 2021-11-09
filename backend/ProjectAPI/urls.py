@@ -21,6 +21,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('TeamSubmission.urls')),
+    url(r'^', include('TeamProfile.urls')),
+    
     path('api/', include('TeamSubmission.urls')),
     path('auth/', obtain_auth_token)
 ]

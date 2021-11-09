@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'api',
     'TeamSubmission.apps.TeamsubmissionConfig',
+    'TeamProfile.apps.TeamprofileConfig',
     'rest_framework',
     'rest_framework.authtoken'
 ]
